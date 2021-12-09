@@ -170,3 +170,7 @@ weather-body {
   left: 31px;
   top: -13px;
 }
+
+svg {
+  overflow: visible;
+}
