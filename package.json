@@ -1,0 +1,33 @@
+{
+  "name": "advent-of",
+  "version": "1.0.0",
+  "description": "[24 DAYS X 24 CHALLENGES](https://www.adventofjs.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "netlify dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynthiateeters/advent-of-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynthiateeters/advent-of-js/issues"
+  },
+  "homepage": "https://github.com/cynthiateeters/advent-of-js#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "netlify-cli": "^8.0.19",
+    "prettier": "^2.5.1"
+  }
+}
