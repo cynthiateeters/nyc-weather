@@ -74,18 +74,14 @@ const getWeather = async (city) => {
          <div class="bar cloudy">
         */
         const bar = clone.querySelector('.bar');
-        const main = day.weather[0].main;
+        const main = day?.weather[0]?.main || 'Clear';
+        const description = day?.weather[0]?.description;
         // console.log(iconNameToSizeMap[main]);
         let icon = iconNameToSizeMap[main];
-        if (main === 'Clouds') {
-            if (day.weather[0].description === 'overcast clouds') {
-                icon = iconNameToSizeMap['Clouds'];
-            }
-            else {
-                icon = iconNameToSizeMap['PartlyCloudy'];
-            }
+        if (main === 'Clouds' && description !== 'overcast clouds') {
+            icon = iconNameToSizeMap['PartlyCloudy'];
         }
-        bar.classList.add(icon.condition);
+        bar.classList.add(icon?.condition);
 
 
         /*

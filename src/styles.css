@@ -167,5 +167,8 @@ h1 {
 
 svg {
   overflow: visible;
-  /* mix-blend-mode: multiply; */
+}
+
+g {
+  mix-blend-mode: multiply;
 }
