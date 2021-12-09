@@ -80,7 +80,7 @@ const getWeather = async (city) => {
         */
 
         const temperature = clone.querySelector('.temperature');
-        temperature.textContent = day.temp.day.toFixed(0);
+        temperature.textContent = `${day.temp.day.toFixed(0)}${String.fromCharCode(176)}`;
 
         /*
          <use xlink:href="#cloudy" width="264" height="166" viewBox="0 0 264 166"></use>
@@ -97,14 +97,14 @@ const getWeather = async (city) => {
         */
 
         const lowValue = clone.querySelector('.low-value');
-        lowValue.textContent = `${day.temp.min.toFixed(0)}°`;
+        lowValue.textContent = `${day.temp.min.toFixed(0)}${String.fromCharCode(176)}`;
 
         /*
         <span class="high-value">82&deg;</span>
         */
 
         const highValue = clone.querySelector('.high-value');
-        highValue.textContent = `${day.temp.max.toFixed(0)}°`;
+        highValue.textContent = `${day.temp.max.toFixed(0)}${String.fromCharCode(176)}`;
 
         wrapper.appendChild(clone);
     });
