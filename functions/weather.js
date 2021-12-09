@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
   const url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${query}&cnt=7&units=imperial&appid=${WEATHER_API_KEY}`;
 
-  console.log(url);
+  // console.log(url);
 
   const response = await axios.get(url, {
     method: 'GET',

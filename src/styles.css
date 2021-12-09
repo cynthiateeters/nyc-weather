@@ -173,4 +173,5 @@ weather-body {
 
 svg {
   overflow: visible;
+  /* mix-blend-mode: multiply; */
 }

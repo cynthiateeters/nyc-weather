@@ -32,6 +32,11 @@ const iconNameToSizeMap = {
         condition: 'rainy',
         size: { width: 160, height: 222 },
     }
+    ,
+    PartlyCloudy: {
+        condition: 'partly-cloudy',
+        size: { width: 230, height: 209 },
+    }
 };
 
 const template = document.querySelector('#day-template');
@@ -71,7 +76,16 @@ const getWeather = async (city) => {
         const bar = clone.querySelector('.bar');
         const main = day.weather[0].main;
         // console.log(iconNameToSizeMap[main]);
-        bar.classList.add(iconNameToSizeMap[main].condition);
+        let icon = iconNameToSizeMap[main];
+        if (main === 'Clouds') {
+            if (day.weather[0].description === 'overcast clouds') {
+                icon = iconNameToSizeMap['Clouds'];
+            }
+            else {
+                icon = iconNameToSizeMap['PartlyCloudy'];
+            }
+        }
+        bar.classList.add(icon.condition);
 
 
         /*
@@ -87,10 +101,10 @@ const getWeather = async (city) => {
         */
 
         const use = clone.querySelector('use');
-        use.setAttribute('xlink:href', `#${iconNameToSizeMap[main].condition}`);
-        use.setAttribute('width', iconNameToSizeMap[main].size.width);
-        use.setAttribute('height', iconNameToSizeMap[main].size.height);
-        use.setAttribute('viewBox', `0 0 ${iconNameToSizeMap[main].size.width} ${iconNameToSizeMap[main].size.height}`);
+        use.setAttribute('xlink:href', `#${icon.condition}`);
+        use.setAttribute('width', icon.size.width);
+        use.setAttribute('height', icon.size.height);
+        use.setAttribute('viewBox', `0 0 ${icon.size.width} ${icon.size.height}`);
 
         /*
         <span class="low-value">28&deg;</span>
